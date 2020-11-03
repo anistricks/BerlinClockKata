@@ -11,12 +11,32 @@ class BerlinClock
         if($minutes == 2) return "YYOO";
         if($minutes == 3) return "YYYO";
         if($minutes == 4) return "YYYY";
+        /*
         if($minutes == 5) return "YOOOOOOOOOO";
         if($minutes == 10) return "YYOOOOOOOOO";
         if($minutes == 15) return "YYROOOOOOOO";
+        */
+        $singleMinutes = "";
+        $color1= $minutes / 5 ;
+
+        if($minutes > "04"){
+            for ($i = 1; $i <= 11; $i++) {
+                if ($i == 3 && $minutes % 15 == 0) {
+                    $singleMinutes = $singleMinutes . "R";
+                }
+                if ($i <= $color1 && $i != 3) {
+                        $singleMinutes = $singleMinutes . "Y";
+                    } else if($i > $color1) {
+                        $singleMinutes = $singleMinutes . "O";
+                    }
+            }
+                }
+            return $singleMinutes;
+            }
 
 
-    }
+
+
 
     public function hours(string $hours) : string
     {
@@ -34,7 +54,7 @@ class BerlinClock
         if($hours == 15) return "YYYO";
         if($hours == 20) return "YYYY";
        */
-
+        //version 2 mix
         $singleHours = "";
         $color1= $hours % 5 ;
         if($hours < "05"){
