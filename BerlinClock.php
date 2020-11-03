@@ -32,8 +32,17 @@ class BerlinClock
     }
 
     public function seconds(string $seconds) : string
-    {
+    {    /* version 1 the even seconds 0 and the odd seconds 1
         if($seconds == 0) return "R";
         if($seconds == 1) return "O";
+    */
+        //version 2 all the seconds even and odd
+        if($seconds % 2 == 0) {
+            return "R";
+        }else{
+            return "O";
+        }
     }
+
+
 }
