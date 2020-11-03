@@ -4,35 +4,51 @@
 class BerlinClock
 {
 
-    public function minutes(string $minutes) : string
+    public function minutes(string $minutes): string
     {
+        /*version 1 minutes
         if($minutes == 0) return "OOOO";
         if($minutes == 1) return "YOOO";
         if($minutes == 2) return "YYOO";
         if($minutes == 3) return "YYYO";
         if($minutes == 4) return "YYYY";
+        */
         /* version 1 5minutes
         if($minutes == 5) return "YOOOOOOOOOO";
         if($minutes == 10) return "YYOOOOOOOOO";
         if($minutes == 15) return "YYROOOOOOOO";
         */
+        $singleMinutes = "";
+        $color2 = $minutes % 5;
+        if ($minutes < "05") {
+            for ($i = 1; $i <= 4; $i++) {
 
+                if ($i <= $color2) {
+                    $singleMinutes = $singleMinutes . "Y";
+                } else {
+                    $singleMinutes = $singleMinutes . "O";
+                }
+            }
+            return $singleMinutes;
+        }
+        if ($minutes > "04") {
         $coupleMinutes = "";
-        $color1= $minutes / 5 ;
-        if($minutes > "04"){
-            for ($i = 1; $i <= 11; $i++) {
-                if ($i == 3 && $minutes % 15 == 0) {
-                    $coupleMinutes = $coupleMinutes . "R";
-                }
-                if ($i <= $color1 && $i != 3) {
-                    $coupleMinutes = $coupleMinutes . "Y";
-                    } else if($i > $color1) {
-                    $coupleMinutes = $coupleMinutes . "O";
-                    }
-            }
-                }
-            return $coupleMinutes;
-            }
+        $color1 = $minutes / 5;
+        for ($i = 1; $i <= 11; $i++) {
+        if ($i == 3 && $minutes % 15 == 0) {
+        $coupleMinutes = $coupleMinutes . "R";
+                  }
+
+        if ($i <= $color1 && $i != 3) {
+        $coupleMinutes = $coupleMinutes . "Y";
+         } else if ($i > $color1) {
+    $coupleMinutes = $coupleMinutes . "O";
+       }
+    }
+  }
+return $coupleMinutes;
+}
+
 
 
 
