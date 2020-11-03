@@ -13,6 +13,7 @@ class BerlinClock
         if($minutes == 4) return "YYYY";
         if($minutes == 5) return "YOOOOOOOOOO";
         if($minutes == 10) return "YYOOOOOOOOO";
+        if($minutes == 15) return "YYROOOOOOOO";
 
 
     }
