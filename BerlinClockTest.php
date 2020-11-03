@@ -132,6 +132,16 @@ class BerlinClockTest extends TestCase
 
         self::assertEquals("R", $actual);
     }
+    public function test_seconds_given01_shouldReturnO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->seconds("01");
+
+        self::assertEquals("O", $actual);
+    }
+
+
+
 
 
 

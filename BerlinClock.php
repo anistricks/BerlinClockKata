@@ -34,5 +34,6 @@ class BerlinClock
     public function seconds(string $seconds) : string
     {
         if($seconds == 0) return "R";
+        if($seconds == 1) return "O";
     }
 }
