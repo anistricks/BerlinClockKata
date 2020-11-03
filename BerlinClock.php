@@ -30,4 +30,9 @@ class BerlinClock
         if($hours == 15) return "YYYO";
         if($hours == 20) return "YYYY";
     }
+
+    public function seconds(string $seconds) : string
+    {
+        if($seconds == 0) return "R";
+    }
 }
