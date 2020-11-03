@@ -24,5 +24,6 @@ class BerlinClock
         if($hours == 1) return "YOOO";
         if($hours == 2) return "YYOO";
         if($hours == 3) return "YYYO";
+        if($hours == 4) return "YYYY";
     }
 }
