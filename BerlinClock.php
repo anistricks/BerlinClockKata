@@ -21,5 +21,6 @@ class BerlinClock
     public function hours(string $hours) : string
     {
         if($hours == 0) return "OOOO";
+        if($hours == 1) return "YOOO";
     }
 }
