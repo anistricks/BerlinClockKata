@@ -20,15 +20,33 @@ class BerlinClock
 
     public function hours(string $hours) : string
     {
+
         if($hours == 0) return "OOOO";
         if($hours == 1) return "YOOO";
         if($hours == 2) return "YYOO";
         if($hours == 3) return "YYYO";
         if($hours == 4) return "YYYY";
-        if($hours == 5) return "YOOO";
+       /* version 1 if($hours == 5) return "YOOO";
         if($hours == 10) return "YYOO";
         if($hours == 15) return "YYYO";
         if($hours == 20) return "YYYY";
+       */
+        $coupleHours="";
+        $color= $hours / 5 ;
+        $yellow="Y";
+        $off="O";
+        for ($i = 1; $i <= 4; $i++) {
+                if ($i <= $color) {
+                    $coupleHours=$coupleHours."Y";
+                } else {
+                    $coupleHours=$coupleHours."O";
+                }
+
+            }
+        return $coupleHours;
+
+        // version 2
+
     }
 
     public function seconds(string $seconds) : string
