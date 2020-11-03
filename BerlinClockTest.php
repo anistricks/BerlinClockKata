@@ -76,6 +76,13 @@ class BerlinClockTest extends TestCase
 
         self::assertEquals("YOOO", $actual);
     }
+    public function test_hours_given02_shouldReturnYYOO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->hours("02");
+
+        self::assertEquals("YYOO", $actual);
+    }
 
 
 
