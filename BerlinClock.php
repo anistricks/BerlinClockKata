@@ -29,7 +29,7 @@ class BerlinClock
         if($minutes >"04" && $minutes%5==0){
             return $couple;
     }else{
-            return $single." ".$couple;
+            return $couple." ".$single;
         }
     }
     public function hours(string $hours) : string
@@ -131,4 +131,5 @@ class BerlinClock
             }
             return $singleMinutes;
     }
+
 }

@@ -143,52 +143,43 @@ class BerlinClockTest extends TestCase
 
     //complex case minutes
 
-    public function test_minutes_given06_shouldReturnY0OO_YOOOOOOOOOO() {
+    public function test_minutes_given06_shouldReturnYOOO_YOOOOOOOOOO() {
         $BerlinClock = new BerlinClock();
 
         $actual = $BerlinClock->minutes("06");
 
-        self::assertEquals("YOOO YOOOOOOOOOO", $actual);
+        self::assertEquals("YOOOOOOOOOO YOOO", $actual);
     }
 
-    public function test_minutes_given07_shouldReturnYYOO_YOOOOOOOOOO() {
+    public function test_minutes_given07_shouldReturnYOOOOOOOOOO_YYOO() {
         $BerlinClock = new BerlinClock();
 
        $actual = $BerlinClock->minutes("07");
 
-       self::assertEquals("YYOO YOOOOOOOOOO", $actual);
+       self::assertEquals("YOOOOOOOOOO YYOO", $actual);
     }
 
-    public function test_minutes_given17_shouldReturnYYOO_YYROOOOOOOO() {
+    public function test_minutes_given17_shouldReturnYYROOOOOOOO_YYOO() {
         $BerlinClock = new BerlinClock();
 
         $actual = $BerlinClock->minutes("17");
 
-        self::assertEquals("YYOO YYROOOOOOOO", $actual);
+        self::assertEquals("YYROOOOOOOO YYOO", $actual);
     }
-    public function test_minutes_given27_shouldReturnYYOO_YYRYYOOOOOO() {
+    public function test_minutes_given27_shouldReturnYYRYYOOOOOO_YYOO() {
         $BerlinClock = new BerlinClock();
 
         $actual = $BerlinClock->minutes("27");
 
-        self::assertEquals("YYOO YYRYYOOOOOO", $actual);
+        self::assertEquals("YYRYYOOOOOO YYOO", $actual);
     }
-    public function test_minutes_given47_shouldReturnYYOO_YYRYYRYYROO() {
+    public function test_minutes_given47_shouldReturnYYRYYRYYROO_YYOO() {
         $BerlinClock = new BerlinClock();
 
         $actual = $BerlinClock->minutes("47");
 
-        self::assertEquals("YYOO YYRYYRYYROO", $actual);
+        self::assertEquals("YYRYYRYYROO YYOO", $actual);
     }
-
-
-
-
-
-
-
-
-
 
 
 
