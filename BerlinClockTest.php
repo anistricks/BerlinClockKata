@@ -214,6 +214,17 @@ class BerlinClockTest extends TestCase
     }
 
 
+    public function test_show_clock(){
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->showClock("00","19","42");
+
+        self::assertEquals(1,1);
+        var_dump($actual);
+    }
+
+
+
 
 
 

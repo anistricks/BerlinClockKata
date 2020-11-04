@@ -156,5 +156,82 @@ class BerlinClock
         }
         return $coupleHours;
     }
+    public function showClock(string $string1,$string2,$string3):string{
+        return "\n  ".$this->Stringseconds($string1)." \n".$this->Stringhours($string2)."\n".$this->Stringminutes($string3)."\n";
+
+    }
+    public function Stringminutes(string $minutes): string
+    {
+        /*version1 minutes
+        if($minutes == 0) return "OOOO";
+        if($minutes == 1) return "YOOO";
+        if($minutes == 2) return "YYOO";
+        if($minutes == 3) return "YYYO";
+        if($minutes == 4) return "YYYY";
+        */
+        /* version1 5minutes
+        if($minutes == 5) return "YOOOOOOOOOO";
+        if($minutes == 10) return "YYOOOOOOOOO";
+        if($minutes == 15) return "YYROOOOOOOO";
+        */
+        // global version
+
+        $single=$this->singleMinutes($minutes);
+        $couple=$this->coupleMinutes($minutes);
+        if ($minutes < "05") {
+
+            return $single;
+        }
+        if($minutes >"04" && $minutes%5==0){
+            return $couple;
+        }else{
+            return $couple." \n".$single;
+        }
+    }
+    public function Stringhours(string $hours) : string
+    {
+
+        /* version 1 1 hours
+        if($hours == 0) return "OOOO";
+        if($hours == 1) return "YOOO";
+        if($hours == 2) return "YYOO";
+        if($hours == 3) return "YYYO";
+        if($hours == 4) return "YYYY";
+        */
+        /* version 1  5hours
+        if($hours == 5) return "YOOO";
+         if($hours == 10) return "YYOO";
+         if($hours == 15) return "YYYO";
+         if($hours == 20) return "YYYY";
+        */
+        //version 2 mix
+
+        $singleHours=$this->singleHours($hours);
+        $coupleHours=$this->coupleHours($hours);
+        if($hours < "05"){
+            return $singleHours;
+
+        }if($hours > "04"  && $hours%5==0) {
+        return $coupleHours;
+    }else{
+        return $coupleHours." \n".$singleHours;
+    }
+
+
+    }
+
+    public function Stringseconds(string $seconds) : string
+    {    /* version 1 the even seconds 0 and the odd seconds 1
+        if($seconds == 0) return "R";
+        if($seconds == 1) return "O";
+    */
+        //version 2 all the seconds even and odd
+        if($seconds % 2 == 0) {
+            return "R";
+        }else{
+            return "O";
+        }
+    }
+
 
 }
