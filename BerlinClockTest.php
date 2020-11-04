@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class BerlinClockTest extends TestCase
 {
+    //simple case
     public function test_minutes_given00_shouldReturnOOOO() {
         $BerlinClock = new BerlinClock();
 
@@ -139,6 +140,51 @@ class BerlinClockTest extends TestCase
 
         self::assertEquals("O", $actual);
     }
+
+    //complex case minutes
+
+    public function test_minutes_given06_shouldReturnY0OO_YOOOOOOOOOO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->minutes("06");
+
+        self::assertEquals("YOOO YOOOOOOOOOO", $actual);
+    }
+
+    public function test_minutes_given07_shouldReturnYYOO_YOOOOOOOOOO() {
+        $BerlinClock = new BerlinClock();
+
+       $actual = $BerlinClock->minutes("07");
+
+       self::assertEquals("YYOO YOOOOOOOOOO", $actual);
+    }
+
+    public function test_minutes_given17_shouldReturnYYOO_YYROOOOOOOO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->minutes("17");
+
+        self::assertEquals("YYOO YYROOOOOOOO", $actual);
+    }
+    public function test_minutes_given27_shouldReturnYYOO_YYRYYOOOOOO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->minutes("27");
+
+        self::assertEquals("YYOO YYRYYOOOOOO", $actual);
+    }
+    public function test_minutes_given47_shouldReturnYYOO_YYRYYRYYROO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->minutes("47");
+
+        self::assertEquals("YYOO YYRYYRYYROO", $actual);
+    }
+
+
+
+
+
 
 
 
