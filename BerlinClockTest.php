@@ -180,6 +180,40 @@ class BerlinClockTest extends TestCase
 
         self::assertEquals("YYRYYRYYROO YYOO", $actual);
     }
+    ////complex case hours
+
+    public function test_hours_given06_shouldReturnYOOO_YOOO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->hours("06");
+
+        self::assertEquals("YOOO YOOO", $actual);
+    }
+
+    public function test_hours_given07_shouldReturnYOOO_YYOO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->hours("07");
+
+        self::assertEquals("YOOO YYOO", $actual);
+    }
+
+    public function test_hours_given17_shouldReturnYYYO_YYOO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->hours("17");
+
+        self::assertEquals("YYYO YYOO", $actual);
+    }
+    public function test_hours_given23_shouldReturnYYYY_YYYO() {
+        $BerlinClock = new BerlinClock();
+
+        $actual = $BerlinClock->hours("23");
+
+        self::assertEquals("YYYY YYYO", $actual);
+    }
+
+
 
 
 

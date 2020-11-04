@@ -49,33 +49,19 @@ class BerlinClock
         if($hours == 20) return "YYYY";
        */
         //version 2 mix
-        $singleHours = "";
-        $color1= $hours % 5 ;
+
+        $singleHours=$this->singleHours($hours);
+        $coupleHours=$this->coupleHours($hours);
         if($hours < "05"){
-            for ($i = 1; $i <= 4; $i++) {
-                if ($i <= $color1) {
-                    $singleHours = $singleHours . "Y";
-                } else {
-                    $singleHours = $singleHours . "O";
-                }
-            }
-        return $singleHours;
+            return $singleHours;
 
-        } else {
-            $coupleHours = "";
-            $color = $hours / 5;
-            $yellow = "Y";
-            $off = "O";
-            for ($i = 1; $i <= 4; $i++) {
-                if ($i <= $color) {
-                    $coupleHours = $coupleHours . "Y";
-                } else {
-                    $coupleHours = $coupleHours . "O";
-                }
+        }if($hours > "04"  && $hours%5==0) {
+        return $coupleHours;
+    }else{
+        return $coupleHours." ".$singleHours;
+    }
 
-            }
-            return $coupleHours;
-        }
+
     }
 
     public function seconds(string $seconds) : string
@@ -130,6 +116,45 @@ class BerlinClock
                 }
             }
             return $singleMinutes;
+    }
+
+    /**
+     * @param string $hours
+     * @return string
+     */
+    public function singleHours(string $hours): string
+    {
+        $singleHours = "";
+        $color1 = $hours % 5;
+        for ($i = 1; $i <= 4; $i++) {
+            if ($i <= $color1) {
+                $singleHours = $singleHours . "Y";
+            } else {
+                $singleHours = $singleHours . "O";
+            }
+        }
+        return $singleHours;
+    }
+
+    /**
+     * @param string $hours
+     * @return string
+     */
+    public function coupleHours(string $hours): string
+    {
+        $coupleHours = "";
+        $color = $hours / 5;
+        $yellow = "Y";
+        $off = "O";
+        for ($i = 1; $i <= 4; $i++) {
+            if ($i <= $color) {
+                $coupleHours = $coupleHours . "Y";
+            } else {
+                $coupleHours = $coupleHours . "O";
+            }
+
+        }
+        return $coupleHours;
     }
 
 }
